@@ -1,0 +1,48 @@
+notes
+
+// Javascript for the HexRGB
+
+// var a1 = 0 , document.getElementById('txtvarInput').value;
+// var a2 = 0
+// var b1 = 0
+// var b2 = 0
+// var c1 = 0
+// var c2 = 0
+
+// var a = 0
+// var b = 0
+// var c = 0
+
+// document.getElementsByTagName('hex')[0].value
+
+// a = (a1 * 16) + a2
+// b = (b1 * 16) + b2
+// c = (c1 * 16) + c2
+
+// function formChanged() {
+//     var firstName = 
+//     var lastName = 
+// }
+
+
+
+var hex;
+
+function rgbify() {
+  hex = $('input').val().replace('#','');
+  
+  var reg = hex.length === 3 ? hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2] : hex;
+  var conv = reg.match(/.{2}/g);
+  
+  var r = parseInt(conv[0],16);
+  var g = parseInt(conv[1],16);
+  var b = parseInt(conv[2],16);
+  
+  var rgb = r+','+g+','+b;
+  rgb = rgb.replace(/NaN/g,' ... ');
+  
+  $('output').text('rgb('+rgb+')');
+}
+
+setInterval(rgbify,10);
+
