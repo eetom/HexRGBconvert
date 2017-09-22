@@ -1,8 +1,6 @@
 notes
 
-// Javascript for the HexRGB
-
-// var a1 = 0 , document.getElementById('txtvarInput').value;
+// var a1 = 0 
 // var a2 = 0
 // var b1 = 0
 // var b2 = 0
@@ -13,36 +11,12 @@ notes
 // var b = 0
 // var c = 0
 
-// document.getElementsByTagName('hex')[0].value
-
 // a = (a1 * 16) + a2
 // b = (b1 * 16) + b2
 // c = (c1 * 16) + c2
 
-// function formChanged() {
-//     var firstName = 
-//     var lastName = 
-// }
+We will call the first character's value x, and we will call the second character's value y. Here's the simple math formula you use to get the RGB value.
+Reds = ( x * 16 ) + y
+http://www.pixel2life.com/publish/tutorials/164/using_php_to_convert_between_hex_and_rgb_values/
 
-
-
-var hex;
-
-function rgbify() {
-  hex = $('input').val().replace('#','');
-  
-  var reg = hex.length === 3 ? hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2] : hex;
-  var conv = reg.match(/.{2}/g);
-  
-  var r = parseInt(conv[0],16);
-  var g = parseInt(conv[1],16);
-  var b = parseInt(conv[2],16);
-  
-  var rgb = r+','+g+','+b;
-  rgb = rgb.replace(/NaN/g,' ... ');
-  
-  $('output').text('rgb('+rgb+')');
-}
-
-setInterval(rgbify,10);
-
+main code from http://jsfiddle.net/Radnus/Pk9K3/
